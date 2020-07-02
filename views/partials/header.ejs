@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<title> Clone App</title>
+		        <link  rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.4/semantic.min.css">
+
+		<link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+	</head>
+    <body>
+		<!-- <div class="ui fixed inverted menu"> -->
+		<div  class="ui secondary menu">
+			<div class="ui container">
+			    <div class="header item"><i class="pen square icon"></i>BLOG SITE</div>
+				<a href="/" class="item" > Home</a>
+			    <a href="/blogs/new" class="item" > New Blog</a>
+				
+				<div class="right menu">
+					
+				
+				<% if(!(currentUser)) { %>
+				<a href="/login" class="item" > Login</a>
+				<a href="/register" class="item" > Register</a>
+				<% } else { %>
+				<a href="/logout" class="item" > Logout</a>
+				<% } %>
+					</div>
+			</div>
+				
+		</div>
+	     	<div >
+			<% if(error && error.length > 0){ %>
+			<div class="ui negative message">
+				<%= error %>
+			</div>
+		<% } %>
+				
+			<% if(sucess && sucess.length > 0){ %>
+			<div class="ui positive message">
+				<%= sucess %>
+			</div>
+		<% } %>
+			
+			
+		</div>
+
+

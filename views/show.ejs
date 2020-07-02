@@ -1,0 +1,28 @@
+<%- include("./partials/header") %>
+
+<div class="ui main text container segment">
+	<div class="ui huge header"> 
+		 <h2> <%= blog.name.username%> </h2> 	</div>
+	<div class="ui top attached segment">
+		<div class="item">
+			<div class="content">
+				<p> <%- blog.body %> </p>
+			</div>
+			<div class="description">
+				<span> <%= blog.created.toDateString()%></span>
+			</div>
+		</div>
+		<% if(currentUser && blog.name.id.equals(currentUser._id))  { %>
+		<form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+			<a  class="ui orange basic button" href="/blogs/<%= blog._id %>/edit"> Edit</a>
+
+			<button class="ui red basic button">DELETE</button>
+		</form>
+		<% } %>
+	</div>
+		
+
+
+</div>
+
+<%- include("./partials/footer") %>
