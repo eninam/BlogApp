@@ -232,6 +232,6 @@ function checkBlogOwnership(req, res, next) {
 }
 
 
-app.listen(3000, process.env.IP, function() {
+app.listen(3000, process.env.IP,process.env.PORT, function() {
 	console.log("server is running");
 })
