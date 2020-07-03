@@ -38,7 +38,11 @@ app.use(function(req, res, next) {
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
-mongoose.connect("mongodb://localhost/blog", {
+mongoose.connect(
+	// "mongodb://localhost/blog"
+	"mongodb+srv://eninam:Forevernever00@cluster0-qxshj.mongodb.net/ClusterO?retryWrites=true&w=majority"
+	, {
+	// mongodb+srv://eninam:Forevernever00@cluster0-qxshj.mongodb.net/ClusterO?retryWrites=true&w=majority
 	useNewUrlParser: true,
 	useUnifiedTopology: true
 })
