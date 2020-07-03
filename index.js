@@ -64,6 +64,8 @@ var blogSchema = new mongoose.Schema({
 
 var Blog = mongoose.model("Blog",blogSchema);
 
+app.set('port', (process.env.PORT || 5000));
+
 // ROUTES
 app.get("/", function(req, res) {
 	res.redirect("/blogs");
