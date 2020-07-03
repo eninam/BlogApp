@@ -8,6 +8,7 @@ var express        = require("express"),
     mongoose       = require("mongoose"),
 	flash          = require("connect-flash");
 
+const PORT = process.env.PORT || 3000;
 // PASSPORT CONFIG
 app.use(flash());
 
@@ -232,6 +233,6 @@ function checkBlogOwnership(req, res, next) {
 }
 
 
-app.listen(3000, process.env.IP,process.env.PORT, function() {
+app.listen(PORT, process.env.IP, function() {
 	console.log("server is running");
 })
